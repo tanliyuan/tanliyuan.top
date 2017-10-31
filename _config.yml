@@ -1,9 +1,13 @@
 # Site settings
 name: 谭礼渊的博客
+author: TanLiYuan
 email: undefined4me@gmail.com
-author: M/J
 url: http://tanliyuan.top
-resume_site: http://tanliyuan.top/me/
+
+#主题
+theme_author: M/J
+theme_site: https://github.com/maoxiaoke/maoxiaoke.github.io
+
 github: https://github.com/tanliyuan/
 baseurl: ""  #根目录
 description: 假如生活欺骗了你，不要悲伤，不要哭泣。
