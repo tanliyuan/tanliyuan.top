@@ -20,7 +20,7 @@
       // 添加Bootstrap表格样式 table-hover 
       $(".docs-content table").addClass("table table-hover");
   	}
-  	$(window).load(initilizeAfterLoad);
+  	$(window.document).ready(initilizeAfterLoad);
     function initilizeAfterLoad(){
       repairTheImagesWhichCrossTheMaxWidth();
       resetHeadersStyles();
@@ -56,7 +56,7 @@
   })
     //文章内图片点击放大
     $('.post-content img').zoomify();
-}(jQuery)
+}(jQuery);
 //搜索
 SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
