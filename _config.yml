@@ -9,7 +9,7 @@ theme_author: M/J
 theme_site: https://github.com/maoxiaoke/maoxiaoke.github.io
 
 github: https://github.com/tanliyuan/
-baseurl: "tanliyuan.top"  #上下文, 这个是部署在coding上，如果是部署在根路径，就不需要
+baseurl: "."  #上下文, 这个是部署在coding上，如果是部署在根路径，就不需要
 description: 假如生活欺骗了你，不要悲伤，不要哭泣。
 motto: 君当如竹，简约而不简单。
 banner: 这城市风很大，寂寞的人总是晚回家。
