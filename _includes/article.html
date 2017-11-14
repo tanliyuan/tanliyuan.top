@@ -1,0 +1,26 @@
+<article class="breadcrumb clearfix">
+    <header>
+        <div class="">
+            <!-- -->
+        </div>
+        <hgroup>
+            <div>
+                <h3 style="margin-top:13px">
+                    <a class="color-title" rel="nofollow" href='{{post.url}}' target="_blank">{{ post.title }}</a>
+                </h3>
+            </div>
+        </hgroup>
+    </header>
+
+    <div class="content excerpt">{{ post.excerpt }}</div>
+
+    <footer>
+        <p>
+            <span class="date-artical pull-left lh30">{{ post.date | date: "%B %e , %Y" }} {% for tag in post.tags %}
+                <a class="tags-title" href="/tag/#{{ tag }}-ref">{{ tag }}</a>&nbsp; {% endfor %}
+            </span>
+            <a class="btn btn-primary pull-right" rel="nofollow" href='{{post.url}}' target="_blank">阅读全文</a>
+        </p>
+    </footer>
+
+</article>
