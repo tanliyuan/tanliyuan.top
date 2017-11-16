@@ -9,7 +9,7 @@ theme_author: M/J
 theme_site: https://github.com/maoxiaoke/maoxiaoke.github.io
 
 github: https://github.com/tanliyuan/
-baseurl: "."  #这里使用相对路径，保证无论是部署在根上下文还是其他路径，都能正确引用资源
+baseurl: ""  #这里使用相对路径，保证无论是部署在根上下文还是其他路径，都能正确引用资源
 description: 假如生活欺骗了你，不要悲伤，不要哭泣。
 motto: 君当如竹，简约而不简单。
 banner: 这城市风很大，寂寞的人总是晚回家。
