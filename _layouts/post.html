@@ -16,7 +16,11 @@ layout: default
               <!--
                 <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
               -->
-              <div class="meta">Date： <span class="postdate">{{ page.date | date: "%b %d, %Y" }}</span> Author： <a target="_blank" href="{{site.url}}">{{ site.author }}</a></div>
+              <div class="meta">
+                <span class="postdate">日期: {{ page.date | date: "%Y-%m-%d %H:%M" }}</span> 
+                <span class="postdate">作者: <a target="_blank" href="{{site.url}}">{{ site.author }}</a></span>
+                <span class="postdate">阅读时间: {{ content | reading_time }}</span> 
+              </div>
               <br />
               <blockquote><p>本文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"> 知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 </a>进行许可。</p></blockquote>
             </header>
