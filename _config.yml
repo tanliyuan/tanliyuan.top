@@ -23,6 +23,8 @@ exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 github_username: tanliyuan
 highlighter: rouge
 markdown: kramdown
+kramdown:
+   parse_block_html: true
 FB:
   comments :
     provider : disqus
