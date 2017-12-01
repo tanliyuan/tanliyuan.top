@@ -9,9 +9,15 @@
 	<meta name="description" content="谭礼渊的读书札记，个人站长成长手册"> {% endif %} {% if page.keywords %}
 	<meta name="keywords" content="{{page.keywords}}" /> {% else %}
 	<meta name="keywords" content="java、spring、react、后台管理系统、全栈开发" /> {% endif %}
+	<!--必填-->
+	<meta property="og:type" content="blog"/>
+	<meta property="og:image" content="{{page.image}}"/>
+	<meta property="og:release_date" content="{{page.date}}"/>
+	<!--选填-->
+	<meta property="og:title" content="{{page.title}}"/>
+	<meta property="og:description" content="{{page.description}}" />
+	<meta property="og:author" content="{{site.author}}"/>
 
-	<!-- 百度站长验证-->
-	<meta name="baidu-site-verification" content="wJOu7zO8PD" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="msapplication-tap-highlight" content="no">
