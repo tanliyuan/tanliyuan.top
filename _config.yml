@@ -25,6 +25,7 @@ highlighter: rouge
 markdown: kramdown
 kramdown:
    parse_block_html: true
+   auto_id_stripping: true
 FB:
   comments :
     provider : disqus
