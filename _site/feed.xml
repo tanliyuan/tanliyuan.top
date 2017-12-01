@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://www.tanliyuan.top/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.tanliyuan.top/" rel="alternate" type="text/html" /><updated>2017-12-01T18:16:52+08:00</updated><id>http://www.tanliyuan.top/</id><title type="html">谭礼渊的博客</title><subtitle>给我接口，我将窥探整个世界</subtitle><author><name>TanLiYuan</name></author><entry><title type="html">IDEA常用插件集锦</title><link href="http://www.tanliyuan.top/2017/11/30/idea-plugins.html" rel="alternate" type="text/html" title="IDEA常用插件集锦" /><published>2017-11-30T21:09:35+08:00</published><updated>2017-12-01T13:22:21+08:00</updated><id>http://www.tanliyuan.top/2017/11/30/idea-plugins</id><content type="html" xml:base="http://www.tanliyuan.top/2017/11/30/idea-plugins.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#grep-console&quot; id=&quot;markdown-toc-grep-console&quot;&gt;Grep Console&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#gittoolbox&quot; id=&quot;markdown-toc-gittoolbox&quot;&gt;GitToolBox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ideavim&quot; id=&quot;markdown-toc-ideavim&quot;&gt;IdeaVim&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#acejump&quot; id=&quot;markdown-toc-acejump&quot;&gt;AceJump&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#log-support-2&quot; id=&quot;markdown-toc-log-support-2&quot;&gt;Log Support 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mybatis-plugin&quot; id=&quot;markdown-toc-mybatis-plugin&quot;&gt;MyBatis plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IDEA&lt;/code&gt; 是 &lt;code class=&quot;highlighter-rouge&quot;&gt;java web&lt;/code&gt; 的开发神器，这里罗列些自己高频使用的插件，希望也能显著的提高各位的编码体验和工作效率。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#grep-console&quot;&gt;Grep Console&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#gittoolbox&quot;&gt;GitToolBox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ideavim&quot;&gt;IdeaVim&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#acejump&quot;&gt;AceJump&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#log-support-2&quot;&gt;Log Support 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mybatis-plugin&quot;&gt;MyBatis plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;grep-console&quot;&gt;Grep Console&lt;/h2&gt;
+
+&lt;p&gt;开发过程中，我们常用控制台输出日志来定位错误，但是冗长、实时滚动的控制台日志，往往会淹没我们所要关注的内容，这款插件可以很好的为你排忧。主要功能如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;高亮查询匹配的文本&lt;/li&gt;
+  &lt;li&gt;过滤不关心的记录行&lt;/li&gt;
+  &lt;li&gt;匹配到文本时播放语音&lt;/li&gt;
+  &lt;li&gt;tail 文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装后，控制台会有这个图标按钮&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06j18bk14k9e6n1m9m139l1okca.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;点击按钮可以打开配置页面, 上图出现的日志屎黄高亮，就是下面正则匹配 &lt;code class=&quot;highlighter-rouge&quot;&gt;WARN&lt;/code&gt; 级别日志, 红色的 &lt;code class=&quot;highlighter-rouge&quot;&gt;ERROR&lt;/code&gt;, 白色的 &lt;code class=&quot;highlighter-rouge&quot;&gt;INFO&lt;/code&gt;, 甚至如果你想特别关注某些第三方 &lt;code class=&quot;highlighter-rouge&quot;&gt;jar&lt;/code&gt; 包的日志输出，可以像我这里一样匹配对应包路径里面的关键字，我这里是关注 &lt;code class=&quot;highlighter-rouge&quot;&gt;JRebal&lt;/code&gt; 日志&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06it5601feerkvj0neg41itba.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;gittoolbox&quot;&gt;GitToolBox&lt;/h2&gt;
+
+&lt;p&gt;功能如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Git&lt;/code&gt; 状态显示，底部状态条、工程管理器，显示当前分支超前或者落后远程仓库多少个版本&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可配置定时拉取同步分支&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ideavim&quot;&gt;IdeaVim&lt;/h2&gt;
+
+&lt;p&gt;编辑区增加 &lt;code class=&quot;highlighter-rouge&quot;&gt;Vim&lt;/code&gt; 快捷键，从此编码如丝般顺滑&lt;/p&gt;
+
+&lt;h2 id=&quot;acejump&quot;&gt;AceJump&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AceJump&lt;/code&gt; 可以快速的导航光标到编辑器任意可视区内， 按 &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + ;&lt;/code&gt;, 输入任意想聚焦的位置相应字母，即可跳转&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06jt9ljevg21f5966a1nf5a.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;log-support-2&quot;&gt;Log Support 2&lt;/h2&gt;
+
+&lt;p&gt;快速生成常用日志代码片段，下面以 &lt;code class=&quot;highlighter-rouge&quot;&gt;slf4j&lt;/code&gt; 作为日志门面为例，即使开始类里面没有声明日志成员变量，只要输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;loge + TAB&lt;/code&gt; 就可以快速生成 &lt;code class=&quot;highlighter-rouge&quot;&gt;LOGGER&lt;/code&gt;(变量名可配置) 成员变量&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;支持常用日志组件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c084bi721pgu1d45h6t1r7f15dua.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;            &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LOGGER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LoggerFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06latfmtov12hq183u1dga12t4a.gif-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;mybatis-plugin&quot;&gt;MyBatis plugin&lt;/h2&gt;
+
+&lt;p&gt;快速在 &lt;code class=&quot;highlighter-rouge&quot;&gt;Mapper&lt;/code&gt; 和 对应命名空间的 &lt;code class=&quot;highlighter-rouge&quot;&gt;xml&lt;/code&gt; 之间跳转&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06l4pqtdht16k73a2pvga3ka.gif-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>TanLiYuan</name></author><category term="idea" /><summary type="html">IDEA 是 java web 的开发神器，这里罗列些自己高频使用的插件，希望也能显著的提高各位的编码体验和工作效率。</summary></entry><entry><title type="html">开发者不容错过的Chrome插件集</title><link href="http://www.tanliyuan.top/2017/11/30/developer-chrome-plugins.html" rel="alternate" type="text/html" title="开发者不容错过的Chrome插件集" /><published>2017-11-30T16:32:59+08:00</published><updated>2017-12-01T17:35:20+08:00</updated><id>http://www.tanliyuan.top/2017/11/30/developer-chrome-plugins</id><content type="html" xml:base="http://www.tanliyuan.top/2017/11/30/developer-chrome-plugins.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#-vimium-键盘侠标配&quot; id=&quot;markdown-toc--vimium-键盘侠标配&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r3n7k1tb77go156cscpf4ga.png-w.jpg&quot; alt=&quot;Vimium&quot; /&gt; Vimium, 键盘侠标配&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-json-handle&quot; id=&quot;markdown-toc--json-handle&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1jr41rs03hs1rd22m91atua.png-w.jpg&quot; alt=&quot;JSON-handle&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; JSON-handle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-hostadmin&quot; id=&quot;markdown-toc--hostadmin&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r2ac01laj1p551n992p81j45a.png-w.jpg&quot; alt=&quot;HostAdmin App&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; HostAdmin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-有道智能翻译-by-pubuim&quot; id=&quot;markdown-toc--有道智能翻译-by-pubuim&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1bhcmd81qnj1qgs1rra1b39a.png-w.jpg&quot; alt=&quot;有道智能翻译 by PUBU.IM&quot; /&gt; 有道智能翻译 by PUBU.IM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-crxmouse-chrome-gestures&quot; id=&quot;markdown-toc--crxmouse-chrome-gestures&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r0rpst1akq01mu619j3a6da.png-w.jpg&quot; alt=&quot;crxMouse Chrome™ Gestures&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; crxMouse Chrome™ Gestures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-the-great-suspender&quot; id=&quot;markdown-toc--the-great-suspender&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r147r1e121pc31q3o16rof1ea.png-w.jpg&quot; alt=&quot;The Great Suspender&quot; /&gt; The Great Suspender&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-lastpass-free-password-manager&quot; id=&quot;markdown-toc--lastpass-free-password-manager&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1vhb1u9io71i3b6hf1ag9a.png-w.jpg&quot; alt=&quot;LastPass: Free Password Manager&quot; /&gt; LastPass: Free Password Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-tampermonkey&quot; id=&quot;markdown-toc--tampermonkey&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r30u71o161e4h1f2gnr8qcva.png-w.jpg&quot; alt=&quot;Tampermonkey&quot; /&gt; Tampermonkey&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对于开发人员来说，工具箱中得心应手的工具能够成倍的提高我们的工作效率，避免繁杂枯燥重复的工作。下面推荐几款个人工作中使用率很高的插件。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;hr /&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#vimiumhttpstu-img-1aixinxineto_1c05r3n7k1tb77go156cscpf4gapng-wjpg-vimium-键盘侠标配&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r3n7k1tb77go156cscpf4ga.png-w.jpg&quot; alt=&quot;Vimium&quot; /&gt; Vimium, 键盘侠标配&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#json-handlehttpstu-img-1aixinxineto_1c05r1jr41rs03hs1rd22m91atuapng-wjpgheight48px-width48px-json-handle&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1jr41rs03hs1rd22m91atua.png-w.jpg&quot; alt=&quot;JSON-handle&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; JSON-handle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#hostadmin-apphttpstu-img-1aixinxineto_1c05r2ac01laj1p551n992p81j45apng-wjpgheight48px-width48px-hostadmin&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r2ac01laj1p551n992p81j45a.png-w.jpg&quot; alt=&quot;HostAdmin App&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; HostAdmin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#有道智能翻译-by-pubuimhttpstu-img-1aixinxineto_1c05r1bhcmd81qnj1qgs1rra1b39apng-wjpg-有道智能翻译-by-pubuim&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1bhcmd81qnj1qgs1rra1b39a.png-w.jpg&quot; alt=&quot;有道智能翻译 by PUBU.IM&quot; /&gt; 有道智能翻译 by PUBU.IM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#crxmouse-chrome™-gestureshttpstu-img-1aixinxineto_1c05r0rpst1akq01mu619j3a6dapng-wjpgheight48px-width48px-crxmouse-chrome™-gestures&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r0rpst1akq01mu619j3a6da.png-w.jpg&quot; alt=&quot;crxMouse Chrome™ Gestures&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; crxMouse Chrome™ Gestures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-great-suspenderhttpstu-img-1aixinxineto_1c05r147r1e121pc31q3o16rof1eapng-wjpg-the-great-suspender&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r147r1e121pc31q3o16rof1ea.png-w.jpg&quot; alt=&quot;The Great Suspender&quot; /&gt; The Great Suspender&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lastpass-free-password-managerhttpstu-img-1aixinxineto_1c05r1vhb1u9io71i3b6hf1ag9apng-wjpg-lastpass-free-password-manager&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1vhb1u9io71i3b6hf1ag9a.png-w.jpg&quot; alt=&quot;LastPass: Free Password Manager&quot; /&gt; LastPass: Free Password Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#tampermonkeyhttpstu-img-1aixinxineto_1c05r30u71o161e4h1f2gnr8qcvapng-wjpg-tampermonkey&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r30u71o161e4h1f2gnr8qcva.png-w.jpg&quot; alt=&quot;Tampermonkey&quot; /&gt; Tampermonkey&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-vimium-键盘侠标配&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r3n7k1tb77go156cscpf4ga.png-w.jpg&quot; alt=&quot;Vimium&quot; /&gt; Vimium, 键盘侠标配&lt;/h2&gt;
+
+&lt;p&gt;释放你的鼠标，让你像操作 &lt;code class=&quot;highlighter-rouge&quot;&gt;Vim&lt;/code&gt; 编辑器一样操作浏览器。和 &lt;code class=&quot;highlighter-rouge&quot;&gt;Vim&lt;/code&gt; 一样的快捷键来操作浏览器的点击、选中、上下移动页面等。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;按 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; 键, 页面上的链接处会出现提示字母，接着输入悬浮在链接旁的字母，就会跳转到这个链接。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c061o25a1at1e3e9fnfgektba.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;全面的快捷键操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06268831kb91vpa1ruq1l0j1pd7a.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-json-handle&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1jr41rs03hs1rd22m91atua.png-w.jpg&quot; alt=&quot;JSON-handle&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; JSON-handle&lt;/h2&gt;
+
+&lt;p&gt;格式化 &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt; 代码片段从此触手可及，无需打开笨重的 &lt;code class=&quot;highlighter-rouge&quot;&gt;IDE&lt;/code&gt; 开发环境亦或文本编辑器、在线格式化网站等，点击插件图标即可打开工具页面。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;清晰的树状结构，层次关系一目了然&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c062ric67r719itackv3a183ba.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;图片格式链接字段，悬浮即可查看&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c063ubchult4igo1umhfvl3a.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;地址栏访问的如果是 &lt;code class=&quot;highlighter-rouge&quot;&gt;REST JSON格式结果&lt;/code&gt; 请求, 会自动格式化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-hostadmin&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r2ac01laj1p551n992p81j45a.png-w.jpg&quot; alt=&quot;HostAdmin App&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; HostAdmin&lt;/h2&gt;
+
+&lt;p&gt;快捷的 &lt;code class=&quot;highlighter-rouge&quot;&gt;host&lt;/code&gt; 文件管理, 修改后立刻生效&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;便捷的快速搜索, 切换&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c064b2er1ol95ob1cqe1jqr1cnma.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-有道智能翻译-by-pubuim&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1bhcmd81qnj1qgs1rra1b39a.png-w.jpg&quot; alt=&quot;有道智能翻译 by PUBU.IM&quot; /&gt; 有道智能翻译 by PUBU.IM&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c064l1sr1uhb18b41bu81k1m6qea.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-crxmouse-chrome-gestures&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r0rpst1akq01mu619j3a6da.png-w.jpg&quot; alt=&quot;crxMouse Chrome™ Gestures&quot; height=&quot;48px&quot; width=&quot;48px&quot; /&gt; crxMouse Chrome™ Gestures&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;网页任意处，按住鼠标右键拖动鼠标绘制相应轨迹，即可完成对应关闭当前标签、前一标签、后一标签、前进后退等动作，省去满屏找关闭按钮&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c064scq417er5018qk9uj1v4ea.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-the-great-suspender&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r147r1e121pc31q3o16rof1ea.png-w.jpg&quot; alt=&quot;The Great Suspender&quot; /&gt; The Great Suspender&lt;/h2&gt;
+
+&lt;p&gt;休眠未活动的标签页,减少内存占用，再次点击时激活。 &lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt; 浏览器每打开一个标签页就会新开一个进程，但对于那些从上个标签页的链接打开的页面、同一个域名下的标签页，会放在一个进程里面&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;window&lt;/code&gt; 任务管理器下可以看到一系列 &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome.exe&lt;/code&gt; 进程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c065go056ve1mtk16cp16k03vpa.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;The Great Suspender&lt;/code&gt; 可以将在配置时间内没有查看的标签页收到一个进程下来节省内存，&lt;code class=&quot;highlighter-rouge&quot;&gt;shift + Esc&lt;/code&gt; 查看 &lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt; 进程, 可以看到很多标签页移到了 &lt;code class=&quot;highlighter-rouge&quot;&gt;The Great Suspender&lt;/code&gt; 进程下, 左边的竖线表示同处一个进程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c0662hum1a8v6pi10sshna1hgba.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c06758vt5gb89114vs1utpk1ka.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-lastpass-free-password-manager&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r1vhb1u9io71i3b6hf1ag9a.png-w.jpg&quot; alt=&quot;LastPass: Free Password Manager&quot; /&gt; LastPass: Free Password Manager&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;管理面板，管理各个站点密码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c067epvi1pj169l1v73i36q6na.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c067idnv6o8nrartk18p918pja.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;菜单栏显示当前站点匹配的账户，支持多账号&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c067pc0s5k53j61gks1t2q21ia.png-w.jpg&quot; alt=&quot;&quot; /&gt;
+ &lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c067s11j1str1jm6kfk13dd1vf6a.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-tampermonkey&quot;&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c05r30u71o161e4h1f2gnr8qcva.png-w.jpg&quot; alt=&quot;Tampermonkey&quot; /&gt; Tampermonkey&lt;/h2&gt;
+
+&lt;p&gt;油猴网页脚本插件管理, 可以在指定页面上加载实现写好的脚本，来实现一些个性化的定制功能，如屏蔽广告，增加快捷键等，限制你的只有想象力&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;控制台&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c0686a6a8l61r4iclj8gn5v2a.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c0688pl81811fhs1bqgtrqpaka.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;线上环境没法直接连库，只能通过web界面进行有限的操作，离开了 &lt;code class=&quot;highlighter-rouge&quot;&gt;navicate&lt;/code&gt; 没有了快捷键和导出记录功能，效率直接下了个档次，自己就通过油猴脚本在指定域名下加载脚本的功能，实现了前端循环拼接查询内容(安全考虑每次限制只能查询100条)，然后生成 &lt;code class=&quot;highlighter-rouge&quot;&gt;Excel&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tu-img-1.aixinxi.net/o_1c068s8o8m7r1hma1scrlpc1mira.png-w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>TanLiYuan</name></author><category term="Chrome" /><summary type="html">对于开发人员来说，工具箱中得心应手的工具能够成倍的提高我们的工作效率，避免繁杂枯燥重复的工作。下面推荐几款个人工作中使用率很高的插件。</summary></entry></feed>

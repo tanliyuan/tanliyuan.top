@@ -18,14 +18,14 @@ permalink: /:year/:month/:day/:title.html
 excerpt_separator:  '<!-- more -->' #文章摘要
 paginate: 8
 paginate_path: "page:num"
-plugins: [jekyll-paginate, emoji_for_jekyll]
+url: "http://www.tanliyuan.top"
+plugins: [jekyll-paginate, emoji_for_jekyll, jekyll-feed, jekyll-last-modified-at, jekyll-sitemap]
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 github_username: tanliyuan
 highlighter: rouge
 markdown: kramdown
 kramdown:
    parse_block_html: true
-   auto_id_stripping: true
 FB:
   comments :
     provider : disqus
