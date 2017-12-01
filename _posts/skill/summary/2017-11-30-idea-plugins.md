@@ -36,11 +36,11 @@ keywords: java 插件 idea
 
 1. 安装后，控制台会有这个图标按钮
 
-    ![](https://tu-img-1.aixinxi.net/o_1c06j18bk14k9e6n1m9m139l1okca.png-w.jpg)
+  ![](https://tu-img-1.aixinxi.net/o_1c06j18bk14k9e6n1m9m139l1okca.png-w.jpg)
 
 2. 点击按钮可以打开配置页面, 上图出现的日志屎黄高亮，就是下面正则匹配 `WARN` 级别日志, 红色的 `ERROR`, 白色的 `INFO`, 甚至如果你想特别关注某些第三方 `jar` 包的日志输出，可以像我这里一样匹配对应包路径里面的关键字，我这里是关注 `JRebal` 日志
 
-    ![](https://tu-img-1.aixinxi.net/o_1c06it5601feerkvj0neg41itba.png-w.jpg)
+  ![](https://tu-img-1.aixinxi.net/o_1c06it5601feerkvj0neg41itba.png-w.jpg)
 
 ---
 
@@ -62,7 +62,7 @@ keywords: java 插件 idea
 
 `AceJump` 可以快速的导航光标到编辑器任意可视区内， 按 `Ctrl + ;`, 输入任意想聚焦的位置相应字母，即可跳转
 
-   ![](https://tu-img-1.aixinxi.net/o_1c06jt9ljevg21f5966a1nf5a.png-w.jpg)
+ ![](https://tu-img-1.aixinxi.net/o_1c06jt9ljevg21f5966a1nf5a.png-w.jpg)
 
 ## Log Support 2
 
@@ -70,13 +70,13 @@ keywords: java 插件 idea
 
 * 支持常用日志组件
 
-   ![](https://tu-img-1.aixinxi.net/o_1c084bi721pgu1d45h6t1r7f15dua.png-w.jpg)
+ ![](https://tu-img-1.aixinxi.net/o_1c084bi721pgu1d45h6t1r7f15dua.png-w.jpg)
 
   ```java
             private static final Logger LOGGER = LoggerFactory.getLogger(Test.class);
    ```
 
-   ![](https://tu-img-1.aixinxi.net/o_1c06latfmtov12hq183u1dga12t4a.gif-w.jpg)
+ ![](https://tu-img-1.aixinxi.net/o_1c06latfmtov12hq183u1dga12t4a.gif-w.jpg)
 
 ## MyBatis plugin
 
