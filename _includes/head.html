@@ -11,8 +11,8 @@
 	<meta name="keywords" content="java、spring、react、后台管理系统、全栈开发" /> {% endif %}
 	<!--必填-->
 	<meta property="og:type" content="blog"/>
-	<meta property="og:image" content="{{page.image}}"/>
-	<meta property="og:release_date" content="{{page.date}}"/>
+	<meta property="og:image" content="{{ '/styles/images/me/avatar.png' | prepend: site.baseurl }}"/>
+	<meta property="og:release_date" content="{{ page.date | date: "%Y-%m-%d %H:%M" }}"/>
 	<!--选填-->
 	<meta property="og:title" content="{{page.title}}"/>
 	<meta property="og:description" content="{{page.description}}" />
