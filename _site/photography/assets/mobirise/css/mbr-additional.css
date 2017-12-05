@@ -483,6 +483,9 @@ padding-bottom: (@paddingBottom * 15px);
 }
 @isPublish: true;
 
+#slider-u {
+}
+
 #undefined {
 .navbar {
   padding: .5rem 0;
