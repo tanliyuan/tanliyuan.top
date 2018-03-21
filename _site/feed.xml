@@ -1,4 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://www.tanliyuan.top/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.tanliyuan.top/" rel="alternate" type="text/html" /><updated>2017-12-04T21:28:58+08:00</updated><id>http://www.tanliyuan.top/</id><title type="html">谭礼渊的博客</title><subtitle>给我接口，我将窥探整个世界</subtitle><author><name>TanLiYuan</name></author><entry><title type="html">IDEA常用插件集锦</title><link href="http://www.tanliyuan.top/2017/11/30/idea-plugins.html" rel="alternate" type="text/html" title="IDEA常用插件集锦" /><published>2017-11-30T21:09:35+08:00</published><updated>2017-12-01T13:22:21+08:00</updated><id>http://www.tanliyuan.top/2017/11/30/idea-plugins</id><content type="html" xml:base="http://www.tanliyuan.top/2017/11/30/idea-plugins.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://www.tanliyuan.top/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.tanliyuan.top/" rel="alternate" type="text/html" /><updated>2018-03-21T17:13:01+08:00</updated><id>http://www.tanliyuan.top/</id><title type="html">谭礼渊的博客</title><subtitle>给我接口，我将窥探整个世界</subtitle><author><name>TanLiYuan</name></author><entry><title type="html">Mysql explain 中 key_len 的计算</title><link href="http://www.tanliyuan.top/2018/03/08/mysql-key-len.html" rel="alternate" type="text/html" title="Mysql explain 中 key_len 的计算" /><published>2018-03-08T10:21:45+08:00</published><updated>2018-03-08T11:27:56+08:00</updated><id>http://www.tanliyuan.top/2018/03/08/mysql-key-len</id><content type="html" xml:base="http://www.tanliyuan.top/2018/03/08/mysql-key-len.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#mysql-key_len-计算规则&quot; id=&quot;markdown-toc-mysql-key_len-计算规则&quot;&gt;Mysql key_len 计算规则&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mysql&lt;/code&gt; 执行计划中 &lt;code class=&quot;highlighter-rouge&quot;&gt;key_len&lt;/code&gt; 字段的计算规则，通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;key_len&lt;/code&gt; 值分析联合索引使用情况。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;!-- TOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#mysql-key_len-计算规则&quot;&gt;Mysql key_len 计算规则&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;mysql-key_len-计算规则&quot;&gt;Mysql key_len 计算规则&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;所有的索引字段，如果没有设置not null，则需要加一个字节。&lt;/li&gt;
+  &lt;li&gt;定长字段，int占四个字节、date占三个字节、char(n)占n个字符。&lt;/li&gt;
+  &lt;li&gt;对于变成字段varchar(n)，则有n个字符+两个字节。&lt;/li&gt;
+  &lt;li&gt;不同的字符集，一个字符占用的字节数不同。latin1编码的，一个字符占用一个字节，gbk编码的，一个字符占用两个字节，utf8编码的，一个字符占用三个字节。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;示例：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;列类型&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;KEY_LEN&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;备注&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;id int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 4+1 = 5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;允许NULL，加1-byte&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;id int not null&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;不允许NULL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;user char(30) utf8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 30*3+1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;允许NULL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;user varchar(30) not null utf8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 30*3+2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;动态列类型，加2-bytes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;user varchar(30) utf8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 30*3+2+1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;动态列类型，加2-bytes；允许NULL，再加1-byte&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;detail text(10) utf8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key_len = 30*3+2+1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;TEXT列截取部分，被视为动态列类型，加2-bytes；且允许NULL&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;https://placehold.it/15/DC143C/000000?text=+&quot; alt=&quot;#1589F0&quot; /&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;key_len&lt;/code&gt; 只指示了 &lt;code class=&quot;highlighter-rouge&quot;&gt;WHERE&lt;/code&gt; 中用于条件过滤时被选中的索引列，是不包含 &lt;code class=&quot;highlighter-rouge&quot;&gt;ORDER BY/GROUP BY&lt;/code&gt; 这部分被选中的索引列。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>TanLiYuan</name></author><category term="Mysql" /><summary type="html">Mysql 执行计划中 key_len 字段的计算规则，通过 key_len 值分析联合索引使用情况。</summary></entry><entry><title type="html">IDEA常用插件集锦</title><link href="http://www.tanliyuan.top/2017/11/30/idea-plugins.html" rel="alternate" type="text/html" title="IDEA常用插件集锦" /><published>2017-11-30T21:09:35+08:00</published><updated>2017-12-01T13:22:21+08:00</updated><id>http://www.tanliyuan.top/2017/11/30/idea-plugins</id><content type="html" xml:base="http://www.tanliyuan.top/2017/11/30/idea-plugins.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#grep-console&quot; id=&quot;markdown-toc-grep-console&quot;&gt;Grep Console&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#gittoolbox&quot; id=&quot;markdown-toc-gittoolbox&quot;&gt;GitToolBox&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ideavim&quot; id=&quot;markdown-toc-ideavim&quot;&gt;IdeaVim&lt;/a&gt;&lt;/li&gt;

@@ -1,6 +1,14 @@
 [
 
 {
+"title"    : "Mysql explain 中 key_len 的计算",
+"category" : "",
+"tags"     : "Mysql",
+"url"      : "/2018/03/08/mysql-key-len.html",
+"date"     : "2018-03-08 10:21:45 +0800"
+} ,
+
+{
 "title"    : "IDEA常用插件集锦",
 "category" : "",
 "tags"     : "idea",

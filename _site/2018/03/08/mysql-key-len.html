@@ -4,18 +4,18 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-	<title>IDEA常用插件集锦</title>
+	<title>Mysql explain 中 key_len 的计算</title>
 
 	
-	<meta name="description" content="java开发必备常用IDEA插件">  
-	<meta name="keywords" content="java 插件 idea" /> 
+	<meta name="description" content="Mysql执行计划key_len的计算规则，通过key_len查看联合索引使用情况">  
+	<meta name="keywords" content="java mysql key_len 联合索引" /> 
 	<!--必填-->
 	<meta property="og:type" content="blog"/>
 	<meta property="og:image" content="/styles/images/me/avatar.png"/>
-	<meta property="og:release_date" content="2017-11-30 21:09"/>
+	<meta property="og:release_date" content="2018-03-08 10:21"/>
 	<!--选填-->
-	<meta property="og:title" content="IDEA常用插件集锦"/>
-	<meta property="og:description" content="java开发必备常用IDEA插件" />
+	<meta property="og:title" content="Mysql explain 中 key_len 的计算"/>
+	<meta property="og:description" content="Mysql执行计划key_len的计算规则，通过key_len查看联合索引使用情况" />
 	<meta property="og:author" content="TanLiYuan"/>
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -88,8 +88,8 @@
     <div class="container">
         
         <!--
-		    <h1>IDEA常用插件集锦</h1>
-		    <p>Post on Nov 30, 2017 by <a href="/about">TanLiYuan</a></p>
+		    <h1>Mysql explain 中 key_len 的计算</h1>
+		    <p>Post on Mar 08, 2018 by <a href="/about">TanLiYuan</a></p>
 		-->
         <h1>君当如竹，简约而不简单。</h1>
         
@@ -99,8 +99,8 @@
       <div class="banner">
   <div class="container lh30">
     
-    <a href="/categories/#工欲善其事必先利其器-ref">工欲善其事必先利其器</a> /
-    <a href="/tag/#idea-ref">idea</a>
+    <a href="/categories/#Mysql-ref">Mysql</a> /
+    <a href="/tag/#Mysql-ref">Mysql</a>
     
     <div id="search-container" class="pull-right">
       <input type="text" id="search-input" placeholder=" 试试直接搜索吧...">
@@ -174,113 +174,93 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">IDEA常用插件集锦</h1>
+              <h1 class="post-title">Mysql explain 中 key_len 的计算</h1>
               <!--
-                <p class="post-meta">Nov 30, 2017 • TanLiYuan</p>
+                <p class="post-meta">Mar 8, 2018 • TanLiYuan</p>
               -->
               <div class="meta">
-                <span class="postdate">日期: 2017-11-30 21:09</span> 
+                <span class="postdate">日期: 2018-03-08 10:21</span> 
                 <span class="postdate">作者: <a target="_blank" href="http://www.tanliyuan.top">TanLiYuan</a></span>
-                <span class="postdate">阅读时间: about 1  minute</span> 
+                <span class="postdate">阅读时间: less than 1 minute</span> 
               </div>
               <br />
               <blockquote><p>本文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"> 知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 </a>进行许可。</p></blockquote>
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#grep-console" id="markdown-toc-grep-console">Grep Console</a></li>
-  <li><a href="#gittoolbox" id="markdown-toc-gittoolbox">GitToolBox</a></li>
-  <li><a href="#ideavim" id="markdown-toc-ideavim">IdeaVim</a></li>
-  <li><a href="#acejump" id="markdown-toc-acejump">AceJump</a></li>
-  <li><a href="#log-support-2" id="markdown-toc-log-support-2">Log Support 2</a></li>
-  <li><a href="#mybatis-plugin" id="markdown-toc-mybatis-plugin">MyBatis plugin</a></li>
+  <li><a href="#mysql-key_len-计算规则" id="markdown-toc-mysql-key_len-计算规则">Mysql key_len 计算规则</a></li>
 </ul>
 
-<p><code class="highlighter-rouge">IDEA</code> 是 <code class="highlighter-rouge">java web</code> 的开发神器，这里罗列些自己高频使用的插件，希望也能显著的提高各位的编码体验和工作效率。</p>
+<p><code class="highlighter-rouge">Mysql</code> 执行计划中 <code class="highlighter-rouge">key_len</code> 字段的计算规则，通过 <code class="highlighter-rouge">key_len</code> 值分析联合索引使用情况。</p>
 
 <!-- more -->
 
 <!-- TOC -->
 
 <ul>
-  <li><a href="#grep-console">Grep Console</a></li>
-  <li><a href="#gittoolbox">GitToolBox</a></li>
-  <li><a href="#ideavim">IdeaVim</a></li>
-  <li><a href="#acejump">AceJump</a></li>
-  <li><a href="#log-support-2">Log Support 2</a></li>
-  <li><a href="#mybatis-plugin">MyBatis plugin</a></li>
+  <li><a href="#mysql-key_len-计算规则">Mysql key_len 计算规则</a></li>
 </ul>
 
 <!-- /TOC -->
 
-<h2 id="grep-console">Grep Console</h2>
-
-<p>开发过程中，我们常用控制台输出日志来定位错误，但是冗长、实时滚动的控制台日志，往往会淹没我们所要关注的内容，这款插件可以很好的为你排忧。主要功能如下：</p>
+<h2 id="mysql-key_len-计算规则">Mysql key_len 计算规则</h2>
 
 <ul>
-  <li>高亮查询匹配的文本</li>
-  <li>过滤不关心的记录行</li>
-  <li>匹配到文本时播放语音</li>
-  <li>tail 文件</li>
+  <li>所有的索引字段，如果没有设置not null，则需要加一个字节。</li>
+  <li>定长字段，int占四个字节、date占三个字节、char(n)占n个字符。</li>
+  <li>对于变成字段varchar(n)，则有n个字符+两个字节。</li>
+  <li>不同的字符集，一个字符占用的字节数不同。latin1编码的，一个字符占用一个字节，gbk编码的，一个字符占用两个字节，utf8编码的，一个字符占用三个字节。</li>
 </ul>
 
-<ol>
-  <li>安装后，控制台会有这个图标按钮</li>
-</ol>
+<blockquote>
+  <p>示例：</p>
+</blockquote>
 
-<p><img src="https://tu-img-1.aixinxi.net/o_1c06j18bk14k9e6n1m9m139l1okca.png-w.jpg" alt="" /></p>
+<table>
+  <thead>
+    <tr>
+      <th>列类型</th>
+      <th style="text-align: center">KEY_LEN</th>
+      <th style="text-align: right">备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id int</td>
+      <td style="text-align: center">key_len = 4+1 = 5</td>
+      <td style="text-align: right">允许NULL，加1-byte</td>
+    </tr>
+    <tr>
+      <td>id int not null</td>
+      <td style="text-align: center">key_len = 4</td>
+      <td style="text-align: right">不允许NULL</td>
+    </tr>
+    <tr>
+      <td>user char(30) utf8</td>
+      <td style="text-align: center">key_len = 30*3+1</td>
+      <td style="text-align: right">允许NULL</td>
+    </tr>
+    <tr>
+      <td>user varchar(30) not null utf8</td>
+      <td style="text-align: center">key_len = 30*3+2</td>
+      <td style="text-align: right">动态列类型，加2-bytes</td>
+    </tr>
+    <tr>
+      <td>user varchar(30) utf8</td>
+      <td style="text-align: center">key_len = 30*3+2+1</td>
+      <td style="text-align: right">动态列类型，加2-bytes；允许NULL，再加1-byte</td>
+    </tr>
+    <tr>
+      <td>detail text(10) utf8</td>
+      <td style="text-align: center">key_len = 30*3+2+1</td>
+      <td style="text-align: right">TEXT列截取部分，被视为动态列类型，加2-bytes；且允许NULL</td>
+    </tr>
+  </tbody>
+</table>
 
-<ol>
-  <li>点击按钮可以打开配置页面, 上图出现的日志屎黄高亮，就是下面正则匹配 <code class="highlighter-rouge">WARN</code> 级别日志, 红色的 <code class="highlighter-rouge">ERROR</code>, 白色的 <code class="highlighter-rouge">INFO</code>, 甚至如果你想特别关注某些第三方 <code class="highlighter-rouge">jar</code> 包的日志输出，可以像我这里一样匹配对应包路径里面的关键字，我这里是关注 <code class="highlighter-rouge">JRebal</code> 日志</li>
-</ol>
-
-<p><img src="https://tu-img-1.aixinxi.net/o_1c06it5601feerkvj0neg41itba.png-w.jpg" alt="" /></p>
-
-<hr />
-
-<h2 id="gittoolbox">GitToolBox</h2>
-
-<p>功能如下：</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">Git</code> 状态显示，底部状态条、工程管理器，显示当前分支超前或者落后远程仓库多少个版本</p>
-  </li>
-  <li>
-    <p>可配置定时拉取同步分支</p>
-  </li>
-</ul>
-
-<h2 id="ideavim">IdeaVim</h2>
-
-<p>编辑区增加 <code class="highlighter-rouge">Vim</code> 快捷键，从此编码如丝般顺滑</p>
-
-<h2 id="acejump">AceJump</h2>
-
-<p><code class="highlighter-rouge">AceJump</code> 可以快速的导航光标到编辑器任意可视区内， 按 <code class="highlighter-rouge">Ctrl + ;</code>, 输入任意想聚焦的位置相应字母，即可跳转</p>
-
-<p><img src="https://tu-img-1.aixinxi.net/o_1c06jt9ljevg21f5966a1nf5a.png-w.jpg" alt="" /></p>
-
-<h2 id="log-support-2">Log Support 2</h2>
-
-<p>快速生成常用日志代码片段，下面以 <code class="highlighter-rouge">slf4j</code> 作为日志门面为例，即使开始类里面没有声明日志成员变量，只要输入 <code class="highlighter-rouge">loge + TAB</code> 就可以快速生成 <code class="highlighter-rouge">LOGGER</code>(变量名可配置) 成员变量</p>
-
-<ul>
-  <li>支持常用日志组件</li>
-</ul>
-
-<p><img src="https://tu-img-1.aixinxi.net/o_1c084bi721pgu1d45h6t1r7f15dua.png-w.jpg" alt="" /></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Test</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-</code></pre></div></div>
-
-<p><img src="https://tu-img-1.aixinxi.net/o_1c06latfmtov12hq183u1dga12t4a.gif-w.jpg" alt="" /></p>
-
-<h2 id="mybatis-plugin">MyBatis plugin</h2>
-
-<p>快速在 <code class="highlighter-rouge">Mapper</code> 和 对应命名空间的 <code class="highlighter-rouge">xml</code> 之间跳转</p>
-
-<p><img src="https://tu-img-1.aixinxi.net/o_1c06l4pqtdht16k73a2pvga3ka.gif-w.jpg" alt="" /></p>
+<blockquote>
+  <p><img src="https://placehold.it/15/DC143C/000000?text=+" alt="#1589F0" /> <code class="highlighter-rouge">key_len</code> 只指示了 <code class="highlighter-rouge">WHERE</code> 中用于条件过滤时被选中的索引列，是不包含 <code class="highlighter-rouge">ORDER BY/GROUP BY</code> 这部分被选中的索引列。</p>
+</blockquote>
 
             </article>
           <hr>
@@ -313,7 +293,7 @@
       </div> -->
 
       <!--PC和WAP自适应版-->
-      <div id="SOHUCS" sid="2017-11-30 21:09:35 +0800" ></div>
+      <div id="SOHUCS" sid="2018-03-08 10:21:45 +0800" ></div>
       <script type="text/javascript">
           (function(){
               var appid = 'cytianFYb';
